@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: build-suite-test-component-image-source-whmb
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: build-suite-test-component-image-source-whmb
+    app.kubernetes.io/part-of: test-app-ahvo
+  name: build-suite-test-componend2aw
+  namespace: build-e2e-fykj-tenant
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: build-suite-test-component-image-source-whmb
+    weight: 100
+status: {}
